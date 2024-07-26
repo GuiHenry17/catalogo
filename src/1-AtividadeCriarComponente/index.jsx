@@ -5,7 +5,7 @@
 export default function Home() {
     return (
         <div>
-            
+            <h1>Catálogo de Artes</h1>
         </div>
     );
 }
