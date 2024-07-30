@@ -37,21 +37,21 @@ const adicionarItemPedidos = (elemento) => {
 }
 
 const removerPedido = (id) => {
-  let remover = false;
-  let listaAux = listaPedidos.filter((obra) => {
-    if (remover == false) {
-      if (obra.id !== id) {
-        return obra
-      } else {
-        remover = true;
-        return null
+  let remover = false
+  let listaAux = listaPedidos.filter((obra) =>{ 
+      if (remover == false){
+          if(obra.id !== id){
+              return obra
+          }else{
+              remover = true;
+              return null
+          }
+      }else{
+          return obra
       }
-    } else {
-      return produto
-    }
   });
   setListaPedidos(listaAux);
-}
+};
 
   return (
     <div>
@@ -68,7 +68,7 @@ const removerPedido = (id) => {
           listaPedidos.map((obra)=> 
           <div key={obra.id}>
             <p>{obra.nome}: {obra.preco}</p>
-            <button onclick={()=> removerPedido(obra.id)}>Remover</button>
+            <button onClick={()=> removerPedido(obra.id)}>Remover</button>
             </div>
             )}
     </div>
