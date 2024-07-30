@@ -31,21 +31,21 @@ const adicionarItemPedidos = (elemento) => {
 }
 
 const removerPedido = (id) => {
-  let remover = false;
-  let listaAux = listaPedidos.filter((obra) => {
-    if (remover == false) {
-      if (obra.id !== id) {
-        return obra
-      } else {
-        remover = true;
-        return null
+  let remover = false
+  let listaAux = listaPedidos.filter((obra) =>{ 
+      if (remover == false){
+          if(obra.id !== id){
+              return obra
+          }else{
+              remover = true;
+              return null
+          }
+      }else{
+          return obra
       }
-    } else {
-      return produto
-    }
   });
   setListaPedidos(listaAux);
-}
+};
 
   return (
     <div>
