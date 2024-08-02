@@ -21,8 +21,13 @@
 // No conteúdo do botão, coloque o texto "Selecionar" ou algo semelhante.
 
 import { useState } from "react";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
+
+
 
 export default function Home() {
+
  
   const [listaProdutos, setListaProdutos] = useState([
   { id: 1, nome:"O Grito", preco: 'R$1.000.000'},
@@ -54,7 +59,10 @@ const removerPedido = (id) => {
 };
 
   return (
+    <div>  
+      <Header title={"Venda de Obras de Artes"}/>
     <div>
+    <div id='centro'>
         <h1>Catalogo de Artes</h1>
 
         {
@@ -64,6 +72,7 @@ const removerPedido = (id) => {
             <button onClick={() => adicionarItemPedidos(obra)}>Adicionar</button>
           </div>
         )}
+        <h1>Pedidos:</h1>
         {
           listaPedidos.map((obra)=> 
           <div key={obra.id}>
@@ -72,6 +81,9 @@ const removerPedido = (id) => {
             </div>
             )}
     </div>
-   
+    </div>
+    <Footer desenvolvedor={"Desenvolvido por: Guilherme Henrique Santos Pereira"}/>
+    </div>
   );
 }
+
