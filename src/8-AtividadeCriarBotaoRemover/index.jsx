@@ -23,6 +23,7 @@
 import { useState } from "react";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
+import Soma from "./components/Soma";
 
 
 
@@ -58,10 +59,18 @@ const removerPedido = (id) => {
   setListaPedidos(listaAux);
 };
 
+const funcao = (a,b) => {
+  a = prompt("Insira o primeiro valor") * 1
+  b = prompt("Insira o segundo valor") * 1
+  alert(a+b)
+}
+
   return (
     <div>  
       <Header title={"Venda de Obras de Artes"}/>
+      <Soma funcaoSoma={funcao}/>
     <div>
+
     <div id='centro'>
         <h1>Catalogo de Artes</h1>
 
@@ -84,6 +93,7 @@ const removerPedido = (id) => {
     </div>
     <Footer desenvolvedor={"Desenvolvido por: Guilherme Henrique Santos Pereira"}/>
     </div>
+    
   );
 }
 
