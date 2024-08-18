@@ -23,9 +23,11 @@
 import { useState } from "react";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
+import Soma from "./components/Soma";
 
 
 export default function Home() {
+
  
   const [listaProdutos, setListaProdutos] = useState([
   { id: 1, nome:"O Grito", preco: 'R$1.000.000'},
@@ -56,9 +58,21 @@ const removerPedido = (id) => {
   setListaPedidos(listaAux);
 };
 
+const funcao = (a,b) => {
+  a = prompt("Insira o primeiro valor") * 1
+  b = prompt("Insira o segundo valor") * 1
+  alert(a+b)
+}
+
   return (
+    <div>  
+      <Header title={"Venda de Obras de Artes"}/>
+      <Soma funcaoSoma={funcao}/>
     <div>
       <Header title={'Vendas de Obras de Artes'}/>
+
+    <div id='centro'>
+
         <h1>Catalogo de Artes</h1>
 
         {
@@ -68,6 +82,7 @@ const removerPedido = (id) => {
             <button onClick={() => adicionarItemPedidos(obra)}>Adicionar</button>
           </div>
         )}
+        <h1>Pedidos:</h1>
         {
           listaPedidos.map((obra)=> 
           <div key={obra.id}>
@@ -77,6 +92,10 @@ const removerPedido = (id) => {
             )}
             <Footer desenvolvedor={'Guilherme Henrique'}/>
     </div>
-   
+    </div>
+    <Footer desenvolvedor={"Desenvolvido por: Guilherme Henrique Santos Pereira"}/>
+    </div>
+    
   );
 }
+
