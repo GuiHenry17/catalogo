@@ -21,6 +21,9 @@
 // No conteúdo do botão, coloque o texto "Selecionar" ou algo semelhante.
 
 import { useState } from "react";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
+
 
 export default function Home() {
  
@@ -55,6 +58,7 @@ const removerPedido = (id) => {
 
   return (
     <div>
+      <Header title={'Vendas de Obras de Artes'}/>
         <h1>Catalogo de Artes</h1>
 
         {
@@ -71,6 +75,7 @@ const removerPedido = (id) => {
             <button onClick={()=> removerPedido(obra.id)}>Remover</button>
             </div>
             )}
+            <Footer desenvolvedor={'Guilherme Henrique'}/>
     </div>
    
   );
